@@ -48,7 +48,7 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListCell
     let currentModel = vehicles[indexPath.row]
-    cell.configure(type: currentModel.type, status: currentModel.state)
+    cell.configure(type: currentModel.type, state: currentModel.state)
     return cell
   }
   

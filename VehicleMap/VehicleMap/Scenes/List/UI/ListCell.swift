@@ -5,7 +5,6 @@
 //  Created by Mert Koraltan on 26.06.2022.
 //
 
-import Foundation
 import UIKit
 
 class ListCell: UITableViewCell {
@@ -13,12 +12,12 @@ class ListCell: UITableViewCell {
   @IBOutlet weak var typeLabel: UILabel!
   @IBOutlet weak var statusLabel: UILabel!
   
-  func configure(type: String, status: State) {
+  func configure(type: String, state: State) {
     
     typeLabel.text = type
-    statusLabel.text = status.rawValue
+    statusLabel.text = state.rawValue
     
-    switch status {
+    switch state {
     case .active:
       statusLabel.textColor = .green
     case .inactive:

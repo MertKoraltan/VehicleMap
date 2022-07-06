@@ -20,7 +20,7 @@ class ListManager {
           return
         }
         else if let safeData = data,
-                  let vehicles = self.parseJSON(safeData)
+                let vehicles = self.parseJSON(safeData)
         {
           completion(vehicles)
         }

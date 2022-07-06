@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListController: UIViewController {
+class ListViewController: UIViewController {
   
   let viewModel = ListViewModel()
   
@@ -38,7 +38,7 @@ class ListController: UIViewController {
 
 //MARK: - UITableView
 
-extension ListController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return vehicles.count

@@ -15,8 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
    
     window = UIWindow(frame: UIScreen.main.bounds)
-    window!.rootViewController = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController()!
+    
+    let list = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController()!
+    
+    window!.rootViewController = list
     window!.makeKeyAndVisible()
+    
+    window!.backgroundColor = .systemBackground
 
     return true
   }

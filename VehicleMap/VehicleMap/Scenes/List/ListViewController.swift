@@ -13,6 +13,8 @@ class ListViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
+  private let activityIndicator = UIActivityIndicatorView(style: .medium)
+  
   var vehicles: [Vehicle] = [] {
     didSet {
       DispatchQueue.main.async {
@@ -24,14 +26,24 @@ class ListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(activityIndicator)
+    
+    activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    
     tableView.delegate = self
     tableView.dataSource = self
     
     let cell = UINib(nibName: "ListCell", bundle: nil)
     tableView.register(cell, forCellReuseIdentifier: "ListCell")
     
+    activityIndicator.startAnimating()
     viewModel.fetchList { vehicles in
       self.vehicles = vehicles
+      DispatchQueue.main.async {
+        self.activityIndicator.stopAnimating()
+      }      
     }
   }
 }
@@ -53,6 +65,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // TODO
+    let storyboard = UIStoryboard(name: "Map", bundle: nil)
+    
+    guard let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else { return }
+    
+    mapViewController.coordinate = vehicles[indexPath.row].coordinate
+    navigationController?.pushViewController(mapViewController, animated: true)
   }
 }

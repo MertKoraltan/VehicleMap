@@ -11,13 +11,27 @@
         <!--Map View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="MapViewController" customModule="VehicleMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="Y6W-OH-hqX" customClass="MapViewController" customModule="VehicleMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TZ4-A5-0qY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TZ4-A5-0qY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2Mt-QY-yyh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TZ4-A5-0qY" secondAttribute="trailing" id="5gk-YK-Vug"/>
+                            <constraint firstItem="TZ4-A5-0qY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dPY-ES-tFl"/>
+                            <constraint firstAttribute="bottom" secondItem="TZ4-A5-0qY" secondAttribute="bottom" id="mIl-Pe-ajp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="TZ4-A5-0qY" id="kOd-3u-pYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

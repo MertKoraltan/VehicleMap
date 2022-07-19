@@ -59,8 +59,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListCell
-    let currentModel = vehicles[indexPath.row]
-    cell.configure(type: currentModel.type, state: currentModel.state)
+    let selectedModel = vehicles[indexPath.row]
+    cell.configure(type: selectedModel.type, state: selectedModel.state)
     return cell
   }
   
@@ -69,7 +69,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     guard let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else { return }
     
-    mapViewController.coordinate = vehicles[indexPath.row].coordinate
+    let currentModel = vehicles[indexPath.row]
+    
+    mapViewController.selectedCoordinate = currentModel.coordinate
+    mapViewController.vehicles = vehicles
     navigationController?.pushViewController(mapViewController, animated: true)
   }
 }

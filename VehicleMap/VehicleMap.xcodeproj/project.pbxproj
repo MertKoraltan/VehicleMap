@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		561830FC28761641003D42B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561830FB28761641003D42B4 /* MapViewController.swift */; };
-		561830FE28761653003D42B4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561830FD28761653003D42B4 /* MapViewModel.swift */; };
 		5618310028761668003D42B4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561830FF28761668003D42B4 /* Map.storyboard */; };
 		56424DFC2868C1920009BF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56424DFB2868C1920009BF8E /* AppDelegate.swift */; };
 		56424E052868C1930009BF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56424E042868C1930009BF8E /* Assets.xcassets */; };
 		56424E082868C1930009BF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56424E062868C1930009BF8E /* LaunchScreen.storyboard */; };
+		56692D9E28878AA80049B955 /* customAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56692D9D28878AA80049B955 /* customAnnotationView.swift */; };
 		56AA458E2868C687004328CC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA458D2868C687004328CC /* ListViewController.swift */; };
 		56AA45902868C6EF004328CC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AA458F2868C6EF004328CC /* List.storyboard */; };
 		56AA45922868C76D004328CC /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AA45912868C76D004328CC /* ListViewModel.swift */; };
@@ -24,13 +24,13 @@
 
 /* Begin PBXFileReference section */
 		561830FB28761641003D42B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		561830FD28761653003D42B4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		561830FF28761668003D42B4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		56424DF82868C1920009BF8E /* VehicleMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56424DFB2868C1920009BF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56424E042868C1930009BF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56424E072868C1930009BF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56424E092868C1930009BF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56692D9D28878AA80049B955 /* customAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customAnnotationView.swift; sourceTree = "<group>"; };
 		56AA458D2868C687004328CC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		56AA458F2868C6EF004328CC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		56AA45912868C76D004328CC /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				561830FF28761668003D42B4 /* Map.storyboard */,
 				561830FB28761641003D42B4 /* MapViewController.swift */,
-				561830FD28761653003D42B4 /* MapViewModel.swift */,
+				56692D9D28878AA80049B955 /* customAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -223,8 +223,8 @@
 				56AA458E2868C687004328CC /* ListViewController.swift in Sources */,
 				56AA45922868C76D004328CC /* ListViewModel.swift in Sources */,
 				56AA45992868D037004328CC /* ListManager.swift in Sources */,
+				56692D9E28878AA80049B955 /* customAnnotationView.swift in Sources */,
 				561830FC28761641003D42B4 /* MapViewController.swift in Sources */,
-				561830FE28761653003D42B4 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,21 +26,19 @@ class MapViewController: UIViewController {
     let viewRegion = MKCoordinateRegion(center: location,
                                         latitudinalMeters: 200,
                                         longitudinalMeters: 200)
+    
     mapView.setRegion(viewRegion, animated: true)
-    
-    
-    let annotation = MKPointAnnotation()
+    mapView.register(customAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
-    annotation.coordinate = location
-    mapView.addAnnotation(annotation)
-    
     vehicles?.forEach { vehicle in
       let location = CLLocationCoordinate2D(latitude: vehicle.coordinate.latitude,
                                             longitude: vehicle.coordinate.longitude)
       let annotation = MKPointAnnotation()
-
+      
+      annotation.title = "Latitude:\(String(format: "%.4f", location.latitude)) Longitude:\(String(format: "%.4f", location.longitude))"
       annotation.coordinate = location
       self.mapView.addAnnotation(annotation)
     }
   }
 }
+
